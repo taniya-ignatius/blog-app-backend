@@ -16,6 +16,8 @@ router.post("/post",async(req,res)=>{
 
 router.get("/viewall",async(req,res)=>{
     let result=await postModel.find()
+    .populate("userid", "name age mobile address pin -_id")
+    .exec()
     res.json(result)
 })
 
