@@ -2,6 +2,8 @@ const express=require("express")
 const cors=require("cors")
 const mongoose=require("mongoose")
 const userRoute=require("./controllers/UserRouter")
+const postRoute=require("./controllers/PostRouter")
+
 
 const app=express()
 
@@ -12,5 +14,6 @@ mongoose.connect("mongodb+srv://Taniya12:TAN12122001@cluster0.vfq897t.mongodb.ne
 {useNewUrlParser:true})
 
 app.use("/api/blog",userRoute)
+app.use("/api/post",postRoute)
 
 app.listen(3003)
