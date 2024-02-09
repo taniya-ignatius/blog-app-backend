@@ -13,4 +13,10 @@ router.post("/post",async(req,res)=>{
         status:"success"
     })
 })
+
+router.get("/viewall",async(req,res)=>{
+    let result=await postModel.find()
+    res.json(result)
+})
+
 module.exports=router
